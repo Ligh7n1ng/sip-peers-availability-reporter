@@ -66,6 +66,7 @@ then
     rm -f *.xlsx
     
 else
+    rm -f "./.peer_list.tmp"
     echo "No SIP peers. Nothing to do."
 fi
 
