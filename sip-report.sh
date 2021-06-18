@@ -49,7 +49,7 @@ then
     $LOffice --infilter="Text CSV:44,34,UTF8"  --convert-to "xlsx:Calc MS Excel 2007 XML:UTF8" --outdir ./ ./$CurDate-$CurTime-avail-sip.csv
     $LOffice --infilter="Text CSV:44,34,UTF8"  --convert-to "xlsx:Calc MS Excel 2007 XML:UTF8" --outdir ./ ./$CurDate-$CurTime-unavail-sip.csv
     
-    ListOfAttach=$(ls *.xlsx)
+    ListOfAttach=$(ls -A1 *.xlsx | tr '\n' ' ')
     
     echo -e "Attached file contains list of available and unavailable SIP peers.\n\n=========================================\nThis letter is auto-generated.\nPlease do not reply :)\n=========================================" | mutt -s "SIP peers report" $Email -a $ListOfAttach
     
